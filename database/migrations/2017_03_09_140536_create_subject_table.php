@@ -22,7 +22,8 @@ class  CreateSubjectTable extends Migration
 			$table->integer('id_categories')->unsigned()->nullable();
 			$table->foreign('id_categories')->references('id')->on('categories')->onDelete('cascade');
 
-			$table->string('name');
+			$table->string('subject');
+			$table->string('body');
 			$table->timestamps();
 		});
 	}

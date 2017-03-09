@@ -11,9 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'SubjectController@showSubjectList')->name('showSubjectList');
+Route::get('/newSubject', 'SubjectController@showSubjectForm')->name('subjectForm');
+Route::post('/addSubject', 'SubjectController@addSubject')->name('newSubject');
 
 Auth::routes();
 
