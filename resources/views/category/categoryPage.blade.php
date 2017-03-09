@@ -3,11 +3,15 @@
 @section('content')
 <div class="container">
 	@if(Auth::check())
-    	<a class="btn btn-success" href="{{ route('subjectForm', $newId) }}">Nowy Temat</a>
+    	<a class="navbar-text navbar-right" href="{{ route('subjectForm', $newId) }}">Nowy Temat</a>
    	@endif
-	@foreach($categoryInSubject as $subject)
-	    <a href="{{ route('showOneSubject', $subject->id) }}">{{ $subject->subject }}</a>
-	@endforeach
+		<div clas="row">
+   			<div class="col-md-2 col-md-offset-5">
+				@foreach($categoryInSubject as $subject)
+				    <h3><a href="{{ route('showOneSubject', $subject->id) }}">{{ $subject->subject }}</a></h3>
+				@endforeach
+			</div>
+		</div>
 </div>
 
 @endsection
