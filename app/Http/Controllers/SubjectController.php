@@ -22,9 +22,9 @@ class SubjectController extends Controller
 	 * @return \Illuminate\Http\Response
 	 */
 	
-	public function showSubjectForm()
+	public function showSubjectForm($id)
 	{
-		return view('subject.newSubject');
+		return view('subject.newSubject', compact('id', $id));
 	}
 	
 	public function addSubject(Request $request)

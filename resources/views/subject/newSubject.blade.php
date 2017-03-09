@@ -6,7 +6,7 @@
 		
 		  {{ Form::hidden('invisible', 'secret') }}
 	      {{ Form::hidden('id_user', Auth::user()->id )}}
-	      {!! Form::hidden('id_categories', '1') !!}
+	      {!! Form::hidden('id_categories', $id) !!}
 
 	    <div class="form-group">
 	      {!! Form::label('text', 'Temat') !!}
