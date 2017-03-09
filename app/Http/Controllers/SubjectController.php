@@ -11,7 +11,7 @@ class SubjectController extends Controller
 
 	public function showSubjectList()
 	{
-		return view('subject.startPage', ['subjects' => Subject::all()]);
+		return view('subject.startPage', ['subjects' => Subject::paginate(10)]);
 	}
 	
 	/**
@@ -21,6 +21,11 @@ class SubjectController extends Controller
 	 * @param  Subject  $id
 	 * @return \Illuminate\Http\Response
 	 */
+	public function showOneSubject(Subject $id)
+	{
+		$params = clone $id;
+		return view('subject.OneSubjectPage', compact('params', $params));
+	}
 	
 	public function showSubjectForm($id)
 	{
@@ -30,5 +35,6 @@ class SubjectController extends Controller
 	public function addSubject(Request $request)
 	{
 		Subject::create($request->all());
+		return redirect()->back();
 	}
 }

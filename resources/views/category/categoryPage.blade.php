@@ -2,9 +2,11 @@
 
 @section('content')
 <div class="container">
-    <li><a class="btn btn-success " href="{{ route('subjectForm', $newId) }}">Nowy Temat</a></li>
+	@if(Auth::check())
+    	<a class="btn btn-success" href="{{ route('subjectForm', $newId) }}">Nowy Temat</a>
+   	@endif
 	@foreach($categoryInSubject as $subject)
-		<h4>{{ $subject->subject }}</h4>
+	    <a href="{{ route('showOneSubject', $subject->id) }}">{{ $subject->subject }}</a>
 	@endforeach
 </div>
 

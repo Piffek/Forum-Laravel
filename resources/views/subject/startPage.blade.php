@@ -1,7 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
-    @foreach ($subjects as $subject)
-    	{{$subject->name}}
-    @endforeach
+	<div class="container">
+	    @foreach ($subjects as $subject)
+	    	<a href="{{ route('showOneSubject', $subject->id) }}">{{$subject->subject}}</a><br>
+	    @endforeach
+	    {{ $subjects->links()}}
+    </div>
 @endsection
