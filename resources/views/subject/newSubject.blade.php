@@ -4,7 +4,6 @@
 
 	{!! Form::open(['route' => 'newSubject',  'method' => 'POST'] ) !!}
 		
-		  {{ Form::hidden('invisible', 'secret') }}
 	      {{ Form::hidden('id_user', Auth::user()->id )}}
 	      {!! Form::hidden('id_categories', $id) !!}
 
