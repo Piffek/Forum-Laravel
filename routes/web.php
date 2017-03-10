@@ -16,6 +16,7 @@ Route::get('/newSubject/{id}', 'SubjectController@showSubjectForm')->name('subje
 Route::post('/addSubject', 'SubjectController@addSubject')->name('newSubject');
 Route::get('/category/{id}', 'CategoriesController@showCategory')->name('showCategory');
 Route::get('/subject/{id}', 'SubjectController@showOneSubject')->name('showOneSubject');
+Route::post('/newPost', 'PostsController@newPost')->name('newPost');
 
 Auth::routes();
 
