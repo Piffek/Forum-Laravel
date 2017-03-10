@@ -24,13 +24,5 @@ class CategoriesController extends Controller
 		return view('category.categoryPage',compact('categoryInSubject',$categoryInSubject), compact('newId', $newId));
 	}
 	
-	/**
-	 * Update the specified resource in storage.
-	 *
-	 * @param  \Illuminate\Http\Request  $request
-	 * @param  Subject  $id
-	 * @return \Illuminate\Http\Response
-	 */
-	
 
 }

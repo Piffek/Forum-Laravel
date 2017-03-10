@@ -3,8 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Subject;
+use App\Posts;
+use App\User;
+use DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Auth;
+
 
 class SubjectController extends Controller
 {
@@ -14,17 +19,25 @@ class SubjectController extends Controller
 		return view('subject.startPage', ['subjects' => Subject::paginate(10)]);
 	}
 	
+	
 	/**
 	 * Update the specified resource in storage.
 	 *
 	 * @param  \Illuminate\Http\Request  $request
-	 * @param  Subject  $id
+	 * @param  Subject $id
 	 * @return \Illuminate\Http\Response
 	 */
 	public function showOneSubject(Subject $id)
 	{
 		$params = clone $id;
-		return view('subject.OneSubjectPage', compact('params', $params));
+		$userCreateSubject = $id->whoAddSubject($params);
+
+		$postsUser = new Posts();
+		$userCreatePosts = $postsUser->whoAddPosts($params);
+		return view('subject.OneSubjectPage')
+		->with('params', $params)
+		->with('userCreateSubject',$userCreateSubject)
+		->with('userCreatePosts',$userCreatePosts);
 	}
 	
 	public function showSubjectForm($id)
