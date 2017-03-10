@@ -17,6 +17,8 @@ Route::post('/addSubject', 'SubjectController@addSubject')->name('newSubject');
 Route::get('/category/{id}', 'CategoriesController@showCategory')->name('showCategory');
 Route::get('/subject/{id}', 'SubjectController@showOneSubject')->name('showOneSubject');
 Route::post('/newPost', 'PostsController@newPost')->name('newPost');
+Route::get('/deletePost/{id}', 'PostsController@deletePost')->name('deletePost');
+Route::get('/editPost/{id}', 'PostsController@editPost')->name('editPost');
 
 Auth::routes();
 

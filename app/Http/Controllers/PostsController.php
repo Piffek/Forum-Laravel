@@ -19,8 +19,14 @@ class PostsController extends Controller
 	 * Update the specified resource in storage.
 	 *
 	 * @param  \Illuminate\Http\Request  $request
-	 * @param  Subject  $id
+	 * @param  Posts  $id
 	 * @return \Illuminate\Http\Response
 	 */
+	
+	public function deletePost(Posts $id)
+	{
+		$id->delete();
+		return redirect()->back();
+	}
 
 }

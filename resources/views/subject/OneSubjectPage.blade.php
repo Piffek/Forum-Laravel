@@ -32,8 +32,8 @@
 						{{$userOfPosts->text}}<br>
 						{{$userOfPosts->created_at}}
 						@if(Auth::user()->id === $userOfPosts->id_user)
-							<a style="color:green;" href="">Edytuj</a>
-							<a style="color:red;" href="">Usuń</a>
+							<a style="color:green;" href="{{ route('editPost', $userOfPosts->id) }}">Edytuj</a>
+							<a style="color:red;" href="{{ route('deletePost', $userOfPosts->id) }}">Usuń</a>
 						@endif
 						<hr>
 					@endforeach
