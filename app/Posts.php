@@ -17,7 +17,7 @@ class Posts extends Model
 		->join('users', 'Posts.id_user', '=', 'users.id')
 		->select('users.*', 'posts.*')
 		->where([['Posts.id_subject','=',$params->id]])
-		->get();
+		->paginate(3);
 	}
 
 }

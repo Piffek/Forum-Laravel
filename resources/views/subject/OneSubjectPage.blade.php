@@ -4,6 +4,9 @@
 	<div class="container">
 		<div class="row">
 			<div class="jumbotron">
+			@foreach($userCreateSubject as $userOfSubject)
+				Dodany przez: {{$userOfSubject->name}}
+			@endforeach
 				<h3>{{$params->subject}}</h3>
 				{{$params->body}}
 			</div>
@@ -28,10 +31,13 @@
 						Napisał: {{$userOfPosts->name}}<br>
 						{{$userOfPosts->text}}<br>
 						{{$userOfPosts->created_at}}
+						@if(Auth::user()->id === $userOfPosts->id_user)
+							<a style="color:green;" href="">Edytuj</a>
+							<a style="color:red;" href="">Usuń</a>
+						@endif
 						<hr>
 					@endforeach
-
-				{{$posts->links()}}
+					{{ $userCreatePosts->links() }}
 			</div>
 		</div>
 	</div>
