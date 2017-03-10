@@ -19,6 +19,7 @@ Route::get('/subject/{id}', 'SubjectController@showOneSubject')->name('showOneSu
 Route::post('/newPost', 'PostsController@newPost')->name('newPost');
 Route::get('/deletePost/{id}', 'PostsController@deletePost')->name('deletePost');
 Route::get('/editPost/{id}', 'PostsController@editPost')->name('editPost');
+Route::post('/updatePost/{id}', 'PostsController@updatePost')->name('updatePost');
 
 Auth::routes();
 
