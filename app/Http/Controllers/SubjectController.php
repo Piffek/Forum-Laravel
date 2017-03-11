@@ -73,9 +73,10 @@ class SubjectController extends Controller
 	 * @param  Subject $id
 	 * @return \Illuminate\Http\Response
 	 */
-	public function deleteSubject()
+	public function deleteSubject(Subject $id)
 	{
-		
+		$id->delete();
+		return redirect()->action('SubjectController@showSubjectList');
 	}
 	
 	/**
