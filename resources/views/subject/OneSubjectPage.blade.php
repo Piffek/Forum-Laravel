@@ -4,9 +4,19 @@
 	<div class="container">
 		<div class="row">
 			<div class="jumbotron">
-			@foreach($userCreateSubject as $userOfSubject)
+			@if(Auth::check())
+				@foreach($userCreateSubject as $userOfSubject)
+				<div class="row">
+					<div class="text-right">
+						@if(Auth::user()->name === $userOfSubject->name)
+							<a style="color:green;" href="{{ route('editSubject', $params->id) }}">Edytuj</a>
+							<a style="color:red;" href="{{ route('deleteSubject', $params->id) }}">Usuń</a>
+						@endif
+					</div>
+				</div>
 				Dodany przez: {{$userOfSubject->name}}
-			@endforeach
+				@endforeach
+			@endif
 				<h3>{{$params->subject}}</h3>
 				{{$params->body}}
 			</div>
@@ -31,9 +41,11 @@
 						Napisał: {{$userOfPosts->name}}<br>
 						{{$userOfPosts->text}}<br>
 						{{$userOfPosts->created_at}}
-						@if(Auth::user()->id === $userOfPosts->id_user)
-							<a style="color:green;" href="{{ route('editPost', $userOfPosts->id) }}">Edytuj</a>
-							<a style="color:red;" href="{{ route('deletePost', $userOfPosts->id) }}">Usuń</a>
+						@if(Auth::check())
+							@if(Auth::user()->id === $userOfPosts->id_user)
+								<a style="color:green;" href="{{ route('editPost', $userOfPosts->id) }}">Edytuj</a>
+								<a style="color:red;" href="{{ route('deletePost', $userOfPosts->id) }}">Usuń</a>
+							@endif
 						@endif
 						<hr>
 					@endforeach

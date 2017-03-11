@@ -10,7 +10,11 @@ class PostsController extends Controller
 {
 
 	public function newPost(Request $request)
-	{
+	{		
+		$this->validate($request, [
+				'text' => 'required',
+		]);
+		
 		Posts::create($request->all());
 		return redirect()->back();
 	}
@@ -35,11 +39,10 @@ class PostsController extends Controller
 	 * @param  Posts  $id
 	 * @return \Illuminate\Http\Response
 	 */
-	public function editPost($id)
+	public function editPost(Posts $id)
 	{
-		$postId = $id;
-		$posts = Posts::find($id);
-		return view('post.editPostForm', compact('posts',$posts), compact('postId', $postId));
+		$postId = clone $id;
+		return view('post.editPostForm', compact('postId', $postId));
 	}
 	
 	/**

@@ -3,12 +3,16 @@
 @section('content')
 	<div class="container">
 		<div class="row">
-		   	<div class="col-md-2 col-md-offset-5">
-		   		@foreach ($subjects as $subject)
-	    			<h3><a href="{{ route('showOneSubject', $subject->id) }}">{{$subject->subject}}</a><br></h3>
-	    		@endforeach
-	    		{{ $subjects->links()}}
-		   	</div>
+	   		@foreach ($subjects as $subject)
+	   			<div class="jumbotron">
+	   			    <div class="text-right">
+    					Napisał: <b>{{$subject->name}}</b><br>
+    					{{$subject->created_at}}
+    				</div>
+	    			<h5><a href="{{ route('showOneSubject', $subject->id) }}">{{$subject->subject}}</a><br></h5>
+    			</div>
+    		@endforeach
+    		{{ $subjects->links()}}
 		</div>
     </div>
 @endsection

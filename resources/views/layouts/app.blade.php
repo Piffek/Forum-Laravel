@@ -95,7 +95,7 @@
                 </div>
             </div>
         </nav>
-
+		@include('partials.errors')
         @yield('content')
     </div>
 
