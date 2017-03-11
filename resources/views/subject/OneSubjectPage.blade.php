@@ -5,6 +5,10 @@
 		<div class="row">
 			<div class="jumbotron">
 			@foreach($userCreateSubject as $userOfSubject)
+				@if(Auth::user()->name === $userOfSubject->name)
+					<a style="color:green;" href="{{ route('editSubject', $params->id) }}">Edytuj</a>
+					<a style="color:red;" href="{{ route('deleteSubject', $params->id) }}">Usuń</a>
+				@endif
 				Dodany przez: {{$userOfSubject->name}}
 			@endforeach
 				<h3>{{$params->subject}}</h3>

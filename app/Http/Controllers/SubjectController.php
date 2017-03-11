@@ -50,4 +50,44 @@ class SubjectController extends Controller
 		Subject::create($request->all());
 		return redirect()->back();
 	}
+	
+	
+	/**
+	 * Update the specified resource in storage.
+	 *
+	 * @param  \Illuminate\Http\Request  $request
+	 * @param  Subject $id
+	 * @return \Illuminate\Http\Response
+	 */
+	public function editSubject(Subject $id)
+	{
+		$idSubject = clone $id;
+		return view('subject.editSubjectForm', compact('idSubject', $idSubject));
+	}
+	
+	
+	/**
+	 * Update the specified resource in storage.
+	 *
+	 * @param  \Illuminate\Http\Request  $request
+	 * @param  Subject $id
+	 * @return \Illuminate\Http\Response
+	 */
+	public function deleteSubject()
+	{
+		
+	}
+	
+	/**
+	 * Update the specified resource in storage.
+	 *
+	 * @param  \Illuminate\Http\Request  $request
+	 * @param  Subject $id
+	 * @return \Illuminate\Http\Response
+	 */
+	public function updateSubject(Request $request, Subject $id)
+	{
+		$id->update($request->all());
+		return redirect()->back();
+	}
 }
