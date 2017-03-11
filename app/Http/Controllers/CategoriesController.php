@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Categories;
+use DB;
 use App\Subject;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -19,7 +20,11 @@ class CategoriesController extends Controller
 
 	public function ShowCategory($id)
 	{
-		$categoryInSubject = Subject::where('id_categories', $id)->get();
+		$categoryInSubject = DB::table('Subjects')
+		->join('users', 'Subjects.id_user', '=', 'users.id')
+		->select('users.name', 'subjects.*')
+		->where('id_categories', $id)
+		->paginate(5);
 		$newId = $id;
 		return view('category.categoryPage',compact('categoryInSubject',$categoryInSubject), compact('newId', $newId));
 	}
