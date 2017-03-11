@@ -7,16 +7,16 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>
 
-<b>##MUST HAVE!<b>
+<b>##MUST HAVE!</b>
 1.Laravel 5.4
 2.Laravel collective.
 
 ## Install
-1.Use git clone https://github.com/Piffek/Forum-Laravel.git
-2.Create laravel 5.4 project.
-3.Copy this file to laravel project.
-4.Config database and env file.
-5.Cretate migration.
+1.Use git clone https://github.com/Piffek/Forum-Laravel.git<br>
+2.Create laravel 5.4 project.<br>
+3.Copy this file to laravel project.<br>
+4.Config database and env file.<br>
+5.Cretate migration.<br>
 
 
 
