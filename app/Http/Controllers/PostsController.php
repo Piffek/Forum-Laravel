@@ -10,7 +10,11 @@ class PostsController extends Controller
 {
 
 	public function newPost(Request $request)
-	{
+	{		
+		$this->validate($request, [
+				'text' => 'required',
+		]);
+		
 		Posts::create($request->all());
 		return redirect()->back();
 	}

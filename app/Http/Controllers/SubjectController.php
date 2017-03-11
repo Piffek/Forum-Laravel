@@ -47,6 +47,11 @@ class SubjectController extends Controller
 	
 	public function addSubject(Request $request)
 	{
+		$this->validate($request, [
+				'subject' => 'required|unique:subjects|max:255',
+				'body' => 'required',
+		]);
+		
 		Subject::create($request->all());
 		return redirect()->back();
 	}
@@ -88,6 +93,11 @@ class SubjectController extends Controller
 	 */
 	public function updateSubject(Request $request, Subject $id)
 	{
+		$this->validate($request, [
+				'subject' => 'required|unique:subjects|max:255',
+				'body' => 'required',
+		]);
+		
 		$id->update($request->all());
 		return redirect()->back();
 	}
