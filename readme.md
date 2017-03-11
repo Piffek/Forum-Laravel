@@ -7,9 +7,9 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>
 
-<b>##MUST HAVE!</b>
-1.Laravel 5.4
-2.Laravel collective.
+<b>MUST HAVE!</b><br>
+1.Laravel 5.4<br>
+2.Laravel collective.<br>
 
 ## Install
 1.Use git clone https://github.com/Piffek/Forum-Laravel.git<br>
