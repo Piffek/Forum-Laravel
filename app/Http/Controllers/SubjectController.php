@@ -16,10 +16,11 @@ class SubjectController extends Controller
 
 	public function showSubjectList()
 	{
+		$users = User::all();
 		$subjects = DB::table('Subjects')
 		->join('users', 'Subjects.id_user', '=', 'users.id')
 		->select('users.name', 'subjects.*')->paginate(5);
-		return view('subject.startPage', ['subjects' => $subjects]);
+		return view('subject.startPage', ['subjects' => $subjects], compact('users',$users));
 	}
 	
 	

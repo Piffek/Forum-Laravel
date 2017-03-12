@@ -1,0 +1,41 @@
+body
+{
+	background-color:#99C4D1;
+}
+article
+{
+	padding:20px;
+	boxsizing:border-box;
+	margin: 0 15% 0 15%;
+	background-color:white;
+}
+
+.my_category_field
+{
+	padding:20px;
+	width:auto;
+	background-color:#6BDCFF;
+	margin-bottom:10px;
+}
+
+.my_category_field p.param_wrtite_user
+{
+	float:right;
+	mergin-right:50px;
+	color:red;
+}
+
+.my_category_field a
+{
+	position:absolute;
+	height:100%;
+	display:block;
+	width:100%;
+	color:red;
+}
+
+
+footer
+{
+	
+}

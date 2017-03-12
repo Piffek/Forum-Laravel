@@ -12,6 +12,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/myCss.css') }}" rel="stylesheet">
 
     <!-- Scripts -->
     <script>
@@ -46,24 +47,17 @@
                         &nbsp;
                     </ul>
                     
-                    
-                   
-                    
-     
-                    
-                    
-                    
 
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
                     
                     	<li class="dropdown">
 						    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Kategorie<span class="caret"></span></a>
-						      	<ul class="dropdown-menu">
-						          @foreach($categories as $category)
-						            <li><a href="{{route('showCategory', $category->id)}}">{!!$category->name!!}</a>
-						          @endforeach
-						          </ul>
+							      	<ul class="dropdown-menu">
+							          @foreach($categories as $category)
+							            <li><a href="{{route('showCategory', $category->id)}}">{!!$category->name!!}</a>
+							          @endforeach
+							         </ul>
 						</li>
 
                                             <!-- Authentication Links -->
@@ -95,11 +89,16 @@
                 </div>
             </div>
         </nav>
-		@include('partials.errors')
-        @yield('content')
+        <div class="contaner">
+				@include('partials.errors')
+		        @yield('content')
+		 </div>
+	       
     </div>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+   
 </body>
+
 </html>

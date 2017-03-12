@@ -1,18 +1,29 @@
 @extends('layouts.app')
 
 @section('content')
-	<div class="container">
+    <article>
 		<div class="row">
-	   		@foreach ($subjects as $subject)
-	   			<div class="jumbotron">
-	   			    <div class="text-right">
-    					Napisał: <b>{{$subject->name}}</b><br>
-    					{{$subject->created_at}}
-    				</div>
-	    			<h5><a href="{{ route('showOneSubject', $subject->id) }}">{{$subject->subject}}</a><br></h5>
-    			</div>
-    		@endforeach
+			<div class="col-md-6">
+			<h1>Nowe tematy</h1>
+		   		@foreach ($subjects as $subject)
+		   			<div class="my_category_field">
+		   			<a href="{{ route('showOneSubject', $subject->id) }}">{{$subject->subject}}</a><br>
+	    					<p class="param_wrtite_user">Napisał: <b>{{$subject->name}}</b><br></p>
+	    					<p>{{$subject->created_at}}</p>
+	    			</div>
+	    		@endforeach
+	    	</div>
+	    	
+	    	<div class="col-md-6">
+	    		    <h1>Nowi użytkownicy</h1>
+		   		@foreach ($users as $user)
+		   			<div class="my_category_field">
+	    					<p class="param_wrtite_user"> <b>{{$user->name}}</b><br></p>
+	    					<p>{{$user->created_at}}</p>
+	    			</div>
+	    		@endforeach
+	    	</div>
     		{{ $subjects->links()}}
 		</div>
-    </div>
+	 </article>
 @endsection
