@@ -7,9 +7,9 @@
 			<h1>Nowe tematy</h1>
 		   		@foreach ($subjects as $subject)
 		   			<div class="my_category_field">
-		   			<a href="{{ route('showOneSubject', $subject->id) }}">{{$subject->subject}}</a><br>
+		   			<a href="{{ route('showOneSubject', $subject->id) }}">{{$subject->subject}}
 	    					<p class="param_wrtite_user">Napisał: <b>{{$subject->name}}</b><br></p>
-	    					<p>{{$subject->created_at}}</p>
+	    					<p>{{$subject->created_at}}</p></a>
 	    			</div>
 	    		@endforeach
 	    	</div>

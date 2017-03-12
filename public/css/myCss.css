@@ -15,11 +15,21 @@ article
 	boxsizing:border-box;
 	margin: 0 15% 0 15%;
 	background-color:white;
+	border:1px solid black;
+}
+
+article a.button_new_subject
+{
+	margin:10px;
+	width:100px;
+	heignt:30px;
+	display:block;
+	background-color:#43D98B;
 }
 
 .my_category_field
 {
-	padding:20px;
+
 	width:auto;
 	background-color:#6BDCFF;
 	margin-bottom:10px;
@@ -28,17 +38,23 @@ article
 .my_category_field p.param_wrtite_user
 {
 	float:right;
-	mergin-right:50px;
-	color:red;
+	color:black;
 }
 
 .my_category_field a
 {
-	position:absolute;
-	height:100%;
+	height:auto;
 	display:block;
-	width:100%;
-	color:red;
+	width:auto;
+	background-color:#6BDCFF;
+	padding:10px;
+	color:black;
+}
+
+.my_category_field a:hover
+{
+	text-decoration:none;
+	background-color:#B1E0E6;
 }
 
 
