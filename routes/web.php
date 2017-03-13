@@ -28,3 +28,7 @@ Route::post('/updateSubject/{id}', 'SubjectController@updateSubject')->name('upd
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');

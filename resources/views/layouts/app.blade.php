@@ -45,28 +45,10 @@
                     <ul class="nav navbar-nav">
                         &nbsp;
                     </ul>
-                    
-                    
-                   
-                    
-     
-                    
-                    
-                    
 
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
-                    
-                    	<li class="dropdown">
-						    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Kategorie<span class="caret"></span></a>
-						      	<ul class="dropdown-menu">
-						          @foreach($categories as $category)
-						            <li><a href="{{route('showCategory', $category->id)}}">{!!$category->name!!}</a>
-						          @endforeach
-						          </ul>
-						</li>
-
-                                            <!-- Authentication Links -->
+                        <!-- Authentication Links -->
                         @if (Auth::guest())
                             <li><a href="{{ route('login') }}">Login</a></li>
                             <li><a href="{{ route('register') }}">Register</a></li>
@@ -95,7 +77,7 @@
                 </div>
             </div>
         </nav>
-		@include('partials.errors')
+
         @yield('content')
     </div>
 
