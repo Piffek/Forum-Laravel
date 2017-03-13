@@ -10,7 +10,18 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::group([
+		'middleware' => 'roles',
+		'roles' => ['Admin','Mod']
+], function() {
+	
 
+	
+});
+
+Route::group(['middleware' => 'auth'], function () {
+	
+});
 Route::get('/', 'SubjectController@showSubjectList')->name('showSubjectList');
 Route::get('/newSubject/{id}', 'SubjectController@showSubjectForm')->name('subjectForm');
 Route::post('/addSubject', 'SubjectController@addSubject')->name('newSubject');
