@@ -3,6 +3,11 @@
 @section('content')
 <div class="container">
   <div class="row">
+   @if ($errors->has('password'))
+         <span class="help-block">
+            <strong>{{ $errors->first('password') }}</strong>
+          </span>
+    @endif
     <form class="col s12" method="POST" action="{{ route('login') }}">
     	{{ csrf_field() }}
       <div class="row">
