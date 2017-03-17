@@ -57,7 +57,7 @@ class SubjectController extends Controller
 		]);
 		
 		Subject::create($request->all());
-		return redirect()->back();
+		return redirect()->action('SubjectController@showSubjectList');
 	}
 	
 	

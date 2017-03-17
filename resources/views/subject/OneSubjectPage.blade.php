@@ -10,7 +10,7 @@
 							@if(Auth::user()->name === $userOfSubject->name)
 								<div style="float:right;"> 
 									<a class="waves-effect waves-light btn"  href="{{ route('editSubject', $params->id) }}">Edytuj</a>
-									<a class="waves-effect waves-red btn"  href="{{ route('deleteSubject', $params->id) }}">Usuń</a>
+									<a class="waves-effect waves-red btn "  href="{{ route('deleteSubject', $params->id) }}">Usuń</a>
 								</div>
 							@endif
 								<br>Dodany przez: {{$userOfSubject->name}}
