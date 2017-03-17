@@ -103,6 +103,7 @@ class SubjectController extends Controller
 		]);
 		
 		$id->update($request->all());
-		return redirect()->back();
+		return redirect()->action('SubjectController@showOneSubject', ['id' => $id]);
+		//return redirect()->back();
 	}
 }
