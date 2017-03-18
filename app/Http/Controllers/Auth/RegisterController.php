@@ -6,7 +6,6 @@ use App\User;
 use Image;
 use Input;
 use File;
-use Crypt;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;

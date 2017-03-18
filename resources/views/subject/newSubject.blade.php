@@ -17,7 +17,7 @@
 	      {!! Form::textarea('body', '', ['class' => 'form-control']) !!}
 	    </div>
 	
-	    <button class="btn waves-effect waves-teal" type="submit" name="action">Dodaj post</button>
+	    <button class="btn btn-success" type="submit">Dodaj post</button>
 	
 	 {!! Form::close() !!}
 
