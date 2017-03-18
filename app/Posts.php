@@ -18,7 +18,7 @@ class Posts extends Model
 		->select('users.*', 'posts.*')
 		->where([['Posts.id_subject','=',$params->id]])
 		->orderBy('Posts.created_at', 'DESC')
-		->paginate(3);
+		->paginate(10);
 	}
 
 }

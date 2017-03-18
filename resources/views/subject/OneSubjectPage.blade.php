@@ -37,28 +37,33 @@
 					 {!! Form::close() !!}
 				@endif
 			</div>
-			<div class="col s12 m6">
+		</div>
+		<div class="row">
+			<div  class="col s12 m12">
+
+      
 					@foreach($userCreatePosts as $userOfPosts)
-						<div style="margin-bottom:100px">
-						<div class="col s2 m2">
-							<img class="circle responsive-img" src="/logo/{{$userOfPosts->name}}/{{$userOfPosts->randomKey}}.jpg">
-						</div>
+						<div class="card-panel" style="margin-bottom:10%">
 						<b>{{$userOfPosts->name}}</b><br>
-						{{$userOfPosts->text}}<br>
-						{{$userOfPosts->created_at}}<br>
-						@if(Auth::check())
-							@if(Auth::user()->id === $userOfPosts->id_user)
-								<a href="{{ route('editPost', $userOfPosts->id) }}">Edytuj</a>
-								<a href="{{ route('deletePost', $userOfPosts->id) }}">Usuń</a>
-							@endif
-						@endif
-						<hr>
+							<div class="card-panel col s3 m1">
+								<img class="circle responsive-img" src="/logo/{{$userOfPosts->name}}/{{$userOfPosts->randomKey}}.jpg">
+							</div>
+							<div style="float:right">
+								@if(Auth::check())
+									@if(Auth::user()->id === $userOfPosts->id_user)
+										<a  href="{{ route('editPost', $userOfPosts->id) }}">Edytuj</a>
+										<a  href="{{ route('deletePost', $userOfPosts->id) }}">Usuń</a><br>
+									@endif
+								@endif
+							{{$userOfPosts->created_at}}
+							</div>
+														{{$userOfPosts->text}}<br>
 						</div>
 					@endforeach
 					{{ $userCreatePosts->links() }}
+				</div>
 			</div>
-		</div>
-
+</div>
 
 @endsection
 
