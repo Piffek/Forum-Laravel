@@ -40,6 +40,9 @@
 			<div class="col s12 m6">
 					@foreach($userCreatePosts as $userOfPosts)
 						Napisał: {{$userOfPosts->name}}<br>
+						<div class="col s2 m1">
+							<img class="circle responsive-img" src="/logo/{{$userOfPosts->name}}.jpg">
+						</div>
 						{{$userOfPosts->text}}<br>
 						{{$userOfPosts->created_at}}
 						@if(Auth::check())
