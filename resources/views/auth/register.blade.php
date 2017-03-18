@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
 	<div class="row">
-		<form class="col s12" method="POST" action="{{ route('register') }}">
+		<form class="col s12" enctype="multipart/form-data" method="POST" action="{{ route('register') }}">
 			{{csrf_field()}}
 			<div class="row">
 				<div class="input-field col s12">
@@ -41,6 +41,7 @@
 					<input id="password-confirm" type="password" name="password_confirmation" class="validate">
 					<label for="password-confirm">Powtórz hasło</label>
 				</div>
+				{!! Form::file('image') !!}
 			</div>
 			<button class="btn waves-effect waves-light" type="submit" name="action">Zarejestruj
 			<i class="material-icons right">send</i>
