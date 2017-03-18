@@ -38,6 +38,7 @@ class SubjectController extends Controller
 
 		$postsUser = new Posts();
 		$userCreatePosts = $postsUser->whoAddPosts($params);
+
 		return view('subject.OneSubjectPage')
 		->with('params', $params)
 		->with('userCreateSubject',$userCreateSubject)

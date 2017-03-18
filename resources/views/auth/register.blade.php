@@ -5,6 +5,7 @@
 	<div class="row">
 		<form class="col s12" enctype="multipart/form-data" method="POST" action="{{ route('register') }}">
 			{{csrf_field()}}
+			<input type="hidden" name="randomKey" value="{{ rand(0, 1000) }}"></input>
 			<div class="row">
 				<div class="input-field col s12">
           			<i class="material-icons prefix">perm_identity</i>

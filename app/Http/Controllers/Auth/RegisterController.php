@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Auth;
 use App\User;
 use Image;
 use Input;
+use File;
+use Crypt;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -50,7 +52,7 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => 'required|max:255',
+            'name' => 'required|max:255|unique:users',
             'email' => 'required|email|max:255|unique:users',
             'password' => 'required|min:6|confirmed',
         	'image' => 'image|max:2048|mimes:jpg,jpeg',
@@ -67,16 +69,18 @@ class RegisterController extends Controller
     {  
     	if(Input::file())
     	{
-	        	$image = Input::file('image');
-	        	$filename = $data['name'].'.'.$image->getClientOriginalExtension();
-	        	$path = public_path('logo/'.$filename);
-	        	Image::make($image->getRealPath())->resize(200, 200)->save($path);
-	       
-	        return User::create([
-	        		'name' => $data['name'],
-	        		'email' => $data['email'],
-	        		'password' => bcrypt($data['password']),
-	        ]);
+    		File::makeDirectory('logo/'.$data['name']);
+    		$image = Input::file('image');
+    		$filename = $data['randomKey'].'.'.$image->getClientOriginalExtension();
+    		$path = public_path('logo/'.$data['name'].'/'.$filename);
+    		Image::make($image->getRealPath())->resize(200, 200)->save($path);
+    		
+    		return User::create([
+    				'name' => $data['name'],
+    				'email' => $data['email'],
+    				'password' => bcrypt($data['password']),
+    				'randomKey' => $data['randomKey'],
+    		]);
     	}
     }
 }
