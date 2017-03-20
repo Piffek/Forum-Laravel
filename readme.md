@@ -10,6 +10,7 @@
 <b>MUST HAVE!</b><br>
 1.Laravel 5.4<br>
 2.Laravel collective.<br>
+3.Materialize CSS - google.
 
 ## Install
 1.Use git clone https://github.com/Piffek/Forum-Laravel.git<br>
