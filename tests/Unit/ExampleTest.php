@@ -5,6 +5,7 @@ namespace Tests\Unit;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
+use App\Http\Controllers\CategoriesController;
 
 class ExampleTest extends TestCase
 {
@@ -13,8 +14,11 @@ class ExampleTest extends TestCase
      *
      * @return void
      */
-    public function testBasicTest()
+    public function testVariableCategoryController()
     {
-        $this->assertTrue(true);
+    	$categories = new CategoriesController();
+    	$id = '1';
+    	$categories->ShowCategory($id);
+
     }
 }
