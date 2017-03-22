@@ -16,8 +16,8 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
     	Schema::defaultStringLength(191);
-    	$categories = Categories::all();
-    	view()->share('categories', $categories);
+    	//$categories = Categories::all();
+    	//view()->share('categories', $categories);
     	
     }
 
