@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Subject;
+use Session;
 use App\Posts;
 use App\User;
 use DB;
@@ -58,6 +59,7 @@ class SubjectController extends Controller
 		]);
 		
 		Subject::create($request->all());
+		Session::flash('success', 'Dodano nowy temat do rozmów');
 		return redirect()->action('SubjectController@showSubjectList');
 	}
 	
@@ -104,7 +106,7 @@ class SubjectController extends Controller
 		]);
 		
 		$id->update($request->all());
+		Session::flash('success', 'Edytowano temat');
 		return redirect()->action('SubjectController@showOneSubject', ['id' => $id]);
-		//return redirect()->back();
 	}
 }

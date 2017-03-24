@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Posts;
+use Session;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -16,6 +17,7 @@ class PostsController extends Controller
 		]);
 		
 		Posts::create($request->all());
+		Session::flash('success', 'Dodano nowy post');
 		return redirect()->back();
 	}
 	
@@ -29,6 +31,7 @@ class PostsController extends Controller
 	public function deletePost(Posts $id)
 	{
 		$id->delete();
+		Session::flash('success', 'Usunięto post');
 		return redirect()->back();
 	}
 	
@@ -55,6 +58,7 @@ class PostsController extends Controller
 	public function updatePost(Request $request, Posts $id)
 	{
 		$id->update($request->all());
+		Session::flash('success', 'Edytowano post');
 		return redirect()->back();
 	}
 
