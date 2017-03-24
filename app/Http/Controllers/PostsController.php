@@ -31,7 +31,7 @@ class PostsController extends Controller
 	public function deletePost(Posts $id)
 	{
 		$id->delete();
-		Session::flash('success', 'Usunięto post');
+		Session::flash('delete', 'Usunięto post');
 		return redirect()->back();
 	}
 	

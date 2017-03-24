@@ -1,3 +1,9 @@
 @if(Session::has('success'))
-	<a class="btn tooltipped" data-position="bottom" data-delay="50" data-tooltip="I am tooltip"><strong>{{ Session::get('success') }}</strong></a>
+	<div id="card-alert" class="card green">
+		<div class="card-content white-text"><p>{{ Session::get('success') }}</p></div>
+	</div>
+@elseif(Session::has('delete'))
+	<div id="card-alert" class="card red">
+		<div class="card-content white-text"><p>{{ Session::get('delete') }}</p></div>
+	</div>
 @endif
