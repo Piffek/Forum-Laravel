@@ -88,6 +88,7 @@ class SubjectController extends Controller
 	public function deleteSubject(Subject $id)
 	{
 		$id->delete();
+		Session::flash('delete', 'Usunięto temat');
 		return redirect()->action('SubjectController@showSubjectList');
 	}
 	
